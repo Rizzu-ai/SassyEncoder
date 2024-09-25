@@ -119,9 +119,9 @@ async def rss_monitor():
 
 async def fake_event_handler(event):
     """
-    Passes the rss message to the bot as a new event.
+    <blockquote>Passes the rss message to the bot as a new event.
         Args:
-            event (telethon.events): _description_
+            event (telethon.events): _description_</blockquote>
     """
     command, args = event.text.split(maxsplit=1)
     if not check_cmds(command, "/l", "/ql", "/qbleech", "/leech"):
