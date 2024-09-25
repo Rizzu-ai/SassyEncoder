@@ -1,10 +1,10 @@
 {
     "name": "Tg-encoder",
     "description": "A telegram bot which encodes videos.",
-    "logo": "https://telegra.ph/file/75ee20ec8d8c8bba84f02.jpg",
+    "logo": "https://envs.sh/PvC.jpg",
     "keywords": ["Telegram","python", "Video","Compressor","Encoder"],
-    "repository": "https://github.com/nubuki-all/tg-encoder",
-    "success_url": "https://t.me/Ani_Mine",
+    "repository": "https://github.com/rizz-electrical-engg/SassyEncoder.git",
+    "success_url": "https://t.me/aboutRizzx",
     "stack": "container",
     "env": {
         "ALWAYS_DEPLOY_LATEST": {
