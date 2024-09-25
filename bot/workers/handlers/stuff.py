@@ -126,12 +126,12 @@ async def start(event, args, client):
             [Button.inline("Help", data="ihelp")],
             [
                 Button.url(
-                    "Source-Code (Original)",
-                    url="github.com/1Danish-00/compressorqueue",
+                    "Contact",
+                    url="https://t.me/ContactM_ebot",
                 ),
-                Button.url("Developer (Original)", url="t.me/danish_00"),
+                Button.url("SUP Channel", url="t.me/aboutRizzx"),
             ],
-            [Button.url("Fork Maintainer", url="t.me/Col_serra")],
+            [Button.url("Leech Group", url="t.me/Bhartiyeleech")],
         ],
     )
 
@@ -179,12 +179,12 @@ async def beck(event):
             [Button.inline("Help", data="ihelp")],
             [
                 Button.url(
-                    "Source-Code (Original)",
-                    url="github.com/1Danish-00/compressorqueue",
+                    "Contact",
+                    url="t.me/ContactM_ebot",
                 ),
-                Button.url("Developer (Original)", url="t.me/danish_00"),
+                Button.url("SUP Channel", url="https://t.me/ContactM_ebot"),
             ],
-            [Button.url("Fork Maintainer", url="t.me/Col_serra")],
+            [Button.url("Leech Group", url="https://t.me/Bhartiyeleech")],
         ],
     )
 
