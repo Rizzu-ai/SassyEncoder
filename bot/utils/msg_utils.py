@@ -186,7 +186,7 @@ async def avoid_flood(func, *args, **kwargs):
 
 async def edit_message(message, text: str):
     """
-    <blockquote>A function to edit message with a loop in the event of a FloodWait</blockquote>
+    A function to edit message with a loop in the event of a FloodWait
     """
     try:
         edited = await message.edit(text)
@@ -269,7 +269,7 @@ async def reply_message(message, text, quote=True):
 
 
 async def bc_msg(text, except_user=None, mlist=[]):
-    """<blockquote>Broadcast a message to every registered user in bot and optionally return a list of the messages</blockquote>"""
+    """Broadcast a message to every registered user in bot and optionally return a list of the messages"""
     for u in conf.OWNER.split():
         if except_user == (u := int(u)):
             continue
