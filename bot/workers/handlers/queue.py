@@ -44,14 +44,14 @@ str_esc = string_escape
 
 async def listqueue(event, args, client, deletable=True):
     """
-    <blockquote>List items in queue in paged format
+    List items in queue in paged format
     with 10 items per page.
 
     Argument:
      -e (to edit configurations for queued items)
      -p (for parsed queue)
        Not live (Doesn't reflect changes to actual queue)
-       for additional help send without additional arguments</blockquote>
+       for additional help send without additional arguments
     """
     if args:
         or_args = args
@@ -118,10 +118,10 @@ async def listqueue(event, args, client, deletable=True):
 
 async def listqueuep(event, args, client):
     """
-    <blockquote>Send a range of number or number of item in queue to be parsed.\nrange maximum 10.
+    Send a range of number or number of item in queue to be parsed.\nrange maximum 10.
     if using range first and last number must be within the limits of the number of items on queue and must be less than or equal to 10.
     for instance /queue -p 1-10 to print the parsed list of all queued items indexed 1-10.
-    pass 0 as number to get currently encoding.</blockquote>
+    pass 0 as number to get currently encoding.
     """
     async with event.client.action(event.chat_id, "typing"):
         if not user_is_allowed(event.sender_id):
@@ -150,7 +150,7 @@ async def listqueuep(event, args, client):
             x, y = map(int, args.split("-"))
             if (y - x) > 10 or y == x or x > (len(queue) - 1) or y > (len(queue) - 1):
                 return await event.reply(
-                    "<blockquote>First and last number must be within the limits of the number of items on queue and must be less than or equal to 10.</blockquote>"
+                    "First and last number must be within the limits of the number of items on queue and must be less than or equal to 10."
                 )
             rply = str()
             y = y + 1
@@ -173,7 +173,7 @@ async def listqueuep(event, args, client):
 
 async def enleech(event, args: str, client, direct=False):
     """
-    <blockquote>Adds a link or torrent link to encoding queue:
+    Adds a link or torrent link to encoding queue:
         Requires a reply to link or the link as argument
         can also add consecutive items to queue by replying
         to the first link and a number of how many links to add to queue
@@ -189,7 +189,7 @@ async def enleech(event, args: str, client, direct=False):
 
     :: filter format-
         what_to_remove\\ntag_file_as\\ntag_caption_as
-    ::</blockquote>
+    ::
     """
     chat_id = event.chat_id
     user_id = event.sender_id
@@ -358,7 +358,7 @@ async def enleech(event, args: str, client, direct=False):
 
 async def enleech2(event, args: str, client, direct=False):
     """
-    <blockquote>Adds a torrent link to encoding queue using qbittorrent:
+    Adds a torrent link to encoding queue using qbittorrent:
         Requires a reply to link or the link as argument
         can also add consecutive items to queue by replying
         to the first link and a number of how many links to add to queue
@@ -379,7 +379,7 @@ async def enleech2(event, args: str, client, direct=False):
 
     :: filter format-
         what_to_remove\\ntag_file_as\\ntag_caption_as
-    ::</blockquote>
+    ::
     """
     chat_id = event.chat_id
     user_id = event.sender_id
@@ -392,7 +392,7 @@ async def enleech2(event, args: str, client, direct=False):
     invalid_msg = "`Invalid torrent/direct link`"
     mode = "None"
     no_uri_msg = (
-        "<blockquote>`uhm you need to reply to or send command alongside a uri/direct link`</blockquote>"
+        "`uhm you need to reply to or send command alongside a uri/direct link`"
     )
     no_bt_spt_msg = "`Torrent is a batch torrent.\nTo add to queue use -b`"
     no_fl_spt_msg = "`File is not a video.`"
@@ -628,7 +628,7 @@ async def enleech2(event, args: str, client, direct=False):
 
 async def enselect(event, args, client):
     """
-    <blockquote>Select files in batch to encode or skip;
+    Select files in batch to encode or skip;
     flags:
         --all "enable" or "disable"
             select or deselect all files in a batch respectively.
@@ -637,7 +637,7 @@ async def enselect(event, args, client):
     file_ids:- numbers next to the files in batch preview
     list:- numbers separated by spaces (must be in quotes)
     *Requires a batch preview to be active.
-    */batch</blockquote>
+    */batch
     """
     user = event.sender_id
     if not (user_is_owner(user) or user == get_previewer()):
@@ -824,10 +824,10 @@ async def add_multi(message, args, sender_id, flag):
 
 async def addqueue(event, args, client):
     """
-    <blockquote>Add replied video to queue with args
+    Add replied video to queue with args
     Accepts the same argument as /l
     can also be used to reuse a leech command
-        if user is OWNER</blockquote>
+        if user is OWNER
     """
     user_id = event.sender_id
     if not user_is_allowed(user_id):
@@ -863,11 +863,11 @@ async def addqueue(event, args, client):
 
 async def clearqueue(event, args, client):
     """
-    <blockquote>Clears an item or all items from queue
+    Clears an item or all items from queue
     Now requires an argument to prevent accidents.
         - pass a number or a range of numbers representing a queue item or queue items to remove __(check with queue)__
         - pass 'all' (not case sensitive) remove all 'pending' queue items
-            if bot is paused, removes all queue items.</blockquote>
+            if bot is paused, removes all queue items.
     """
     user = event.sender_id
     if not user_is_allowed(user):
@@ -943,11 +943,11 @@ async def clearqueue(event, args, client):
 
 async def edit_batch(event, args, client):
     """
-    <blockquote>Command for viewing queued batches;
+    Command for viewing queued batches;
     args:
         None - view number of queued batches
         queue number (id) of the batch :- check with /queue
-            - enables live preview for the batch.</blockquote>
+            - enables live preview for the batch.
     """
     user = event.sender_id
     if not user_is_allowed(user):
@@ -983,7 +983,7 @@ async def edit_batch(event, args, client):
 
 async def edit_queue(event, args, client):
     """
-    <blockquote>Edit configuration of items already in queue:
+    Edit configuration of items already in queue:
     arguments:
         -f <filter> (*raw filter) [low priority]
             to disable filter pass *'None'
@@ -1004,7 +1004,7 @@ async def edit_queue(event, args, client):
     *raw filter format:-
     what_to_remove\\ntag_file_as\\ntag_caption_as
 
-    *passing 'off' and 'disable' also serve as a method to disable</blockquote>
+    *passing 'off' and 'disable' also serve as a method to disable
     """
     user = event.sender_id
     if not user_is_allowed(user):
