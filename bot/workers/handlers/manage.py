@@ -130,7 +130,7 @@ async def clean_all_qb():
 
 async def clean(event, args, client):
     """
-    <blockquote>Cleans:
+    Cleans:
         all files in known working directories
         queued items
         encoding processes
@@ -145,7 +145,7 @@ async def clean(event, args, client):
             Not advised if you're running multiple ffmpeg process.
     if 'queue' is specified;
         clears all queued items.
-            Not advised if encoding as already started, use /clear all instead</blockquote>
+            Not advised if encoding as already started, use /clear all instead
     """
     if not user_is_owner(event.sender_id):
         return await try_delete(event)
@@ -187,7 +187,7 @@ async def clean(event, args, client):
 
 async def allowgroupenc(event, args, client):
     """
-    <blockquote>Turns on group encoding on and off;
+    Turns on group encoding on and off;
     Group encoding allows bot to:
         - Download & encode files in group (doesn't affect the /leech command)
         - Set thumbnails in group.
@@ -195,7 +195,7 @@ async def allowgroupenc(event, args, client):
     Required arguments:
         - off/disable (disable group encode)
         - on/enable (enable group encode)
-        <All arguments are not case sensitive.></blockquote>
+        <All arguments are not case sensitive.>
     """
     if not user_is_owner(event.sender_id):
         return await event.delete()
@@ -223,7 +223,7 @@ async def allowgroupenc(event, args, client):
 
 async def set_mux_args(event, args, client):
     """
-    <blockquote>Set, reset or disable muxing after transcoding.
+    Set, reset or disable muxing after transcoding.
     Arguments:
         ffmpeg params without the (-i input & output)
             Do not pass encoding params, only map, metadata, dispositions are allowed.
@@ -231,7 +231,7 @@ async def set_mux_args(event, args, client):
 
         reset
             to reset the mux_args to same parameter in env.
-            - if env is not set it is disabled.</blockquote>
+            - if env is not set it is disabled.
     """
     if not user_is_owner(event.sender_id):
         return await try_delete(event)
@@ -260,8 +260,8 @@ async def set_mux_args(event, args, client):
 
 async def get_mux_args(event, args, client):
     """
-    <blockquote>Get currently set mux_args
-    Requires no arguments and any given will be ignored.</blockquote>
+    Get currently set mux_args
+    Requires no arguments and any given will be ignored.
     """
     if not user_is_owner(event.sender_id):
         return await try_delete(event)
@@ -278,7 +278,7 @@ async def get_mux_args(event, args, client):
 
 async def change(event, args, client):
     """
-    <blockquote>Changes bot encoding params;
+    Changes bot encoding params;
 
     Requires full shell command with '''{}''' for input and output (use double quotes for better performance)
         - Binary must me be included in argument and must installed locally or in docker
@@ -287,7 +287,7 @@ async def change(event, args, client):
             • As a workaround you can create a custom bash script
               check handbrakecli.sh for an example on how to create a custom script then do /set myscript.sh
               for bot to always use your script while encoding.
-    Or… path/to/bash_script as arguments.</blockquote>
+    Or… path/to/bash_script as arguments.
     """
     if not user_is_owner(event.sender_id):
         return await try_delete(event)
@@ -306,8 +306,8 @@ async def change(event, args, client):
 
 async def check(event, args, client):
     """
-    <blockquote>Get custom encoding params.
-    Requires no arguments and any given will be ignored.</blockquote>
+    Get custom encoding params.
+    Requires no arguments and any given will be ignored.
     """
     if not user_is_owner(event.sender_id):
         return await try_delete(event)
@@ -322,9 +322,9 @@ async def check(event, args, client):
 
 async def reffmpeg(event, args, client):
     """
-    <blockquote>Reset encoding params.
+    Reset encoding params.
     Default value to reset to, is contained in .config
-    Requires no argument.</blockquote>
+    Requires no argument.
     """
     if not user_is_owner(event.sender_id):
         return await try_delete(event)
@@ -343,10 +343,10 @@ async def reffmpeg(event, args, client):
 
 async def version2(event, args, client):
     """
-    <blockquote>Tag a realese with what numbers you specify:
+    Tag a realese with what numbers you specify:
         - numbers (floats can be specified.)
         - off/disable to turn off
-    Sending this command without argument will check for previous version tags and display them.</blockquote>
+    Sending this command without argument will check for previous version tags and display them.
     """
 
     if not user_is_owner(event.sender_id):
@@ -377,7 +377,7 @@ async def version2(event, args, client):
 
 async def discap(event, args, client):
     """
-    <blockquote>Disable/enable a parsing mechanism:
+    Disable/enable a parsing mechanism:
     Required arguments:
         - anilist
             • on/enable (turns on anilist parsing)
@@ -387,7 +387,7 @@ async def discap(event, args, client):
           *won't work if newlines are detected in caption
             • on/enable (to turn on)
             • off/disable (turn off)
-            • ___ (to check state.)</blockquote>
+            • ___ (to check state.)
     """
     if not user_is_owner(event.sender_id):
         return await try_delete(event)
@@ -453,7 +453,7 @@ async def discap(event, args, client):
 
 async def auto_rename(event, args, client):
     """
-    <blockquote>Ahh yes, the Name filter.
+    Ahh yes, the Name filter.
     A tricky command to used indeed
     All arguments are to be separated by '|'
 
@@ -473,7 +473,7 @@ async def auto_rename(event, args, client):
         Example : /name My Little Puppy|MLP|0
             - All files with My Little Puppy get renamed to MLP.
             - Caption is ignored and normal settings apply.
-        For more examples see Auto-rename.txt.</blockquote>
+        For more examples see Auto-rename.txt.
     """
     fail_msg = (
         "failed…\n**Try:**\n/name " "`(Add_name_to_check_for|Add_name_to_replace_with)`"
@@ -531,14 +531,14 @@ async def v_auto_rename(event, args, client):
 
 async def del_auto_rename(event, args, client):
     """
-    <blockquote>Unlike it's adding counterpart, removing is quite easy simply;
+    Unlike it's adding counterpart, removing is quite easy simply;
     Do /vname and copy the exact filter you want to remove or its number:
     Then as argument, pass:
         - one of the filter listed out
             (might fail if there are whitelines)
         - the number stated next to it
 
-    *command requires the above argument</blockquote>
+    *command requires the above argument
     """
     fail_msg = (
         f"failed\n**Try:**\n/delname "
@@ -582,7 +582,7 @@ async def del_auto_rename(event, args, client):
 
 async def filter(event, args, client):
     """
-    <blockquote>Another filter command. (Not to be confused with namefilter)
+    Another filter command. (Not to be confused with namefilter)
     Unlike namefilter this targets the file_name and is universal.
     Requires the Following arguments:
         -f  *(raw filter} [High priority]
@@ -608,7 +608,7 @@ async def filter(event, args, client):
     *must specify an argument.
 
     Related commands:
-        - /vfilter, /delfilter </blockquote>
+        - /vfilter, /delfilter 
     """
     if not user_is_owner(event.sender_id):
         return await try_delete(event)
@@ -688,7 +688,7 @@ async def save_thumb(event, args, client):
 
 async def pause(event, args, client):
     """
-    <blockquote>Pause bot;
+    Pause bot;
     Prevent bot from encoding for a specified duration.
     muxing and renaming are not paused.
     Arguments:
@@ -696,7 +696,7 @@ async def pause(event, args, client):
             • for instance: /pause 900 to pause for 900 seconds or;
               /pause 0 to pause indefinitely till you cancel with /pause off"
         - off/disable (To unpause)
-        - no argument; (To check state)</blockquote>
+        - no argument; (To check state)
     """
     if not user_is_owner(event.sender_id):
         return await try_delete(event)
@@ -756,7 +756,7 @@ async def fc_forward(msg, args, client):
 
 async def rss_handler(event, args, client):
     """
-    <blockquote>Base command for rss:
+    Base command for rss:
         *Arguments:
             -d (TITLE): To delete already an subscribed feed.
             -e (TITLE): To edit configurations for already subscribed rss feed.
@@ -765,7 +765,7 @@ async def rss_handler(event, args, client):
             -s (TITLE, LINK): To subscribe an rss feed.
 
         for additional help send the above arguments with -h/--help or without additional params.
-        *listed in the order priority.</blockquote>
+        *listed in the order priority.
     """
     if not user_is_owner(event.sender_id):
         return await try_delete(event)
@@ -796,11 +796,11 @@ async def rss_handler(event, args, client):
 
 async def rss_list(event, args, client):
     """
-    <blockquote>Get list of subscribed rss feeds
+    Get list of subscribed rss feeds
         Args:
             None.
         Returns:
-            List of subscribed rss feeds.</blockquote>
+            List of subscribed rss feeds.
     """
     if not user_is_owner(event.sender_id):
         return
@@ -837,10 +837,10 @@ async def rss_list(event, args, client):
 
 async def rss_get(event, args, client):
     """
-    <blockquote>Get the links of titles in rss:
+    Get the links of titles in rss:
     Arguments:
         [Title] - Title used in subscribing rss
-        -a [Amount] - Amount of links to grab</blockquote>
+        -a [Amount] - Amount of links to grab
     """
     if not user_is_owner(event.sender_id):
         return
@@ -897,7 +897,7 @@ async def rss_get(event, args, client):
 
 async def rss_editor(event, args, client):
     """
-    <blockquote>Edit subscribed rss feeds!
+    Edit subscribed rss feeds!
     simply pass the rss title with the following arguements:
         Additional args:
             -c (/command): command to prefix the rss link
@@ -915,7 +915,7 @@ async def rss_editor(event, args, client):
             or - means either of both values
             | - means and
         Returns:
-            success message on successfully editing the rss configuration</blockquote>
+            success message on successfully editing the rss configuration
     """
     if not user_is_owner(event.sender_id):
         return
@@ -998,14 +998,14 @@ async def rss_editor(event, args, client):
 
 async def del_rss(event, args, client):
     """
-    <blockquote>Removes feed with designated title from list of subscribed feeds
+    Removes feed with designated title from list of subscribed feeds
         Args:
             TITLE (str): subscribed rss feed title to remove
 
 
         Returns:
             Success message on successfull removal
-            Not found message if TITLE passed was not found</blockquote>
+            Not found message if TITLE passed was not found
     """
     if not user_is_owner(event.sender_id):
         return
@@ -1020,7 +1020,7 @@ async def del_rss(event, args, client):
 
 async def rss_sub(event, args, client):
     """
-    <blockquote>Subscribe rss feeds!
+    Subscribe rss feeds!
     simply pass the rss link with the following arguements:
         Args:
             -t (TITLE): New Title of the subscribed rss feed [Required]
@@ -1040,7 +1040,7 @@ async def rss_sub(event, args, client):
             | - means and
         *only leech and qbleech commands are passed
         Returns:
-            success message on successfully editing the rss configuration</blockquote>
+            success message on successfully editing the rss configuration
     """
     if not user_is_owner(event.sender_id):
         return
