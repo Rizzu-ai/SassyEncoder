@@ -68,10 +68,10 @@ not_vid_msg = "`Batches and Non-videos not supported`"
 
 async def getlogs(event, args, client):
     """
-    <blockquote>Upload bots logs in txt format.
+    Upload bots logs in txt format.
     Or as a message if '-t' *Number is used
 
-    *Number is the line number to begin from in log file except '0'</blockquote>
+    *Number is the line number to begin from in log file except '0'
     """
     user = event.sender_id
     if not (user_is_dev(user) or user_is_owner(user)):
@@ -116,7 +116,7 @@ async def getthumb(event, args, client):
 
 async def en_download(event, args, client):
     """
-    <blockquote>Downloads the replied message: to a location (specified) locally
+    Downloads the replied message: to a location (specified) locally
     Available arguments:
       End the args with '/' to specify the folder in which to download and let the bot use its filename
       or:
@@ -125,7 +125,7 @@ async def en_download(event, args, client):
       --cap (To use download with caption instead of filename.)
       if no other arg is given after dir, bot automatically downloads to given dir with default filename instead.
 
-      *path specified directly will be downloaded as a subdir to download folder</blockquote>
+      *path specified directly will be downloaded as a subdir to download folder
     """
     if not user_is_owner(event.sender_id):
         return await event.delete()
@@ -179,7 +179,7 @@ async def en_download(event, args, client):
 
 async def en_rename(event, args, client):
     """
-    <blockquote>Reply to a file/link to download,rename and upload it.
+    Reply to a file/link to download,rename and upload it.
 
     Available flags:
     -np - disables anilist parsing.
@@ -192,7 +192,7 @@ async def en_rename(event, args, client):
 
     To define file name send any of the below as arguments:
     "file_name" > str - custom name to rename to (if parsing is enabled this is parsed too)
-    0 > int - get file name from caption.</blockquote>
+    0 > int - get file name from caption.
     """
     turn_id = f"{event.chat_id}:{event.id}"
     user = event.sender_id
@@ -323,7 +323,7 @@ async def en_rename(event, args, client):
 
 async def en_mux(event, args, client):
     """
-    <blockquote>Remuxes/encodes a replied video/link
+    Remuxes/encodes a replied video/link
         - Does not recover from database during restart
     Required arguments:
         valid ffmpeg parameters without the 'ffmpeg', '-i' or output
@@ -344,7 +344,7 @@ async def en_mux(event, args, client):
         -ext {ext} force change extension (requires the preceding dot ".")
         -f set output file name.
         -tc {string} force tag caption
-        -tf {string} force tag file</blockquote>
+        -tf {string} force tag file
     """
 
     turn_id = f"{event.chat_id}:{event.id}"
@@ -622,7 +622,7 @@ async def en_mux(event, args, client):
 
 async def en_upload(event, args, client):
     """
-    <blockquote>Uploads a file/files from local directory or direct/torrent link
+    Uploads a file/files from local directory or direct/torrent link
     Just pass any of the following:
         - the file (with -f) e.g -f "something.txt"
         - the folder path
@@ -639,7 +639,7 @@ async def en_upload(event, args, client):
                 forces downloading using qbtorrent (Only for torrent or magnetic links)
             -qs (optional argument)
                 <int>: selects file to upload from batch torrent using qbittorrent
-    __as an argument.</blockquote>
+    __as an argument.
     """
     if not user_is_owner(event.sender_id):
         return await event.delete()
@@ -892,12 +892,12 @@ async def en_airing(event, args, client):
 
 async def en_anime(event, args, client):
     """
-    <blockquote>Fetch anime info from Anilist
+    Fetch anime info from Anilist
 
     Arguments:
         anime_title - Title of anime
                 or:
-        anime_id (-m) Add the -m flag if you're searching with a mal_id</blockquote>
+        anime_id (-m) Add the -m flag if you're searching with a mal_id
     """
     if not user_is_allowed(event.sender_id):
         return
