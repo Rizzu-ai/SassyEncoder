@@ -73,7 +73,7 @@ async def status(event, args, client):
     memory = psutil.virtual_memory()
     disk = psutil.disk_usage("/").percent
     await event.reply(
-        f"**Version:** `{vercheck}`\n"
+        f"**Version:** `{vercheck}`\n" 
         f"**Branch:** `{branch}`\n"
         f"**Commit Date:** `{last_commit}`\n\n"
         f"**Bot Uptime:** `{currentTime}`\n"
@@ -93,7 +93,7 @@ async def status(event, args, client):
         f"**DISK:** `{disk}%`\n\n"
         f"**Total RAM:** `{get_readable_file_size(memory.total)}`\n"
         f"**Used:** `{get_readable_file_size(memory.used)}` "
-        f"**Free:** `{get_readable_file_size(memory.available)}`" quote=True
+        f"**Free:** `{get_readable_file_size(memory.available)}`"
     )
 
 
