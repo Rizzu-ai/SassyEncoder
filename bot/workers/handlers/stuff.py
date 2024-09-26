@@ -73,7 +73,7 @@ async def status(event, args, client):
     memory = psutil.virtual_memory()
     disk = psutil.disk_usage("/").percent
     await event.reply(
-        f"<blockquote>**Version:** `{vercheck}`\n"
+        f"**Version:** `{vercheck}`\n"
         f"**Branch:** `{branch}`\n"
         f"**Commit Date:** `{last_commit}`\n\n"
         f"**Bot Uptime:** `{currentTime}`\n"
@@ -93,7 +93,7 @@ async def status(event, args, client):
         f"**DISK:** `{disk}%`\n\n"
         f"**Total RAM:** `{get_readable_file_size(memory.total)}`\n"
         f"**Used:** `{get_readable_file_size(memory.used)}` "
-        f"**Free:** `{get_readable_file_size(memory.available)}`</blockquote>"
+        f"**Free:** `{get_readable_file_size(memory.available)}`" quote=True
     )
 
 
@@ -142,12 +142,12 @@ async def help(event, args, client):
 
 async def ihelp(event):
     await event.edit(
-        "<blockquote>**⛩️ An Encode bot**\n\n+</blockquote>"
-        "<blockquote>This bot encodes videos With your custom ffmpeg or handbrake-cli settings.</blockquote>"
-        "<blockquote>\n+Easy to Use (Depends)\n</blockquote>"
-        "<blockquote>-Due to your custom Settings & hosting server bot may or may not take a long time to encode</blockquote>"
+        "**⛩️ An Encode bot**\n\n+"
+        "This bot encodes videos With your custom ffmpeg or handbrake-cli settings."
+        "\n+Easy to Use (Depends)\n"
+        "-Due to your custom Settings & hosting server bot may or may not take a long time to encode"
         ".\n\nJust Forward a Video…/videos"
-        "<blockquote>\n\nFor available commands click the Commands button below.</blockquote>",
+        "\n\nFor available commands click the Commands button below.",
         buttons=[
             [Button.inline("Commands", data="icommands")],
             [Button.inline("🔙 Back", data="beck")],
@@ -191,8 +191,8 @@ async def beck(event):
 
 async def temp_unauth(event, args, client):
     """
-    <blockquote>Un-authorise a user or chat
-    Requires either reply to message or user_id as args</blockquote>
+    Un-authorise a user or chat
+    Requires either reply to message or user_id as args
     """
     sender = event.sender_id
     error = "Failed!,\nCan't remove from temporarily allowed users"
@@ -212,7 +212,7 @@ async def temp_unauth(event, args, client):
                 )
         else:
             return await event.reply(
-                "<blockquote>Either reply to a message sent by the user you want to remove from temporarily allowed users or send /unpermit (user-id)\nExample:\n  /unpermit 123456</blockquote>"
+                "Either reply to a message sent by the user you want to remove from temporarily allowed users or send /unpermit (user-id)\nExample:\n  /unpermit 123456"
             )
     if new_id == sender:
         return await event.reply("Why, oh why did you try to unpermit yourself?")
@@ -236,8 +236,8 @@ async def temp_unauth(event, args, client):
 
 async def temp_auth(event, args, client):
     """
-    <blockquote>Authorizes a chat or user,
-    Requires either a reply to message or user_id as argument</blockquote>
+    Authorizes a chat or user,
+    Requires either a reply to message or user_id as argument
     """
     sender = event.sender_id
     error = "Failed!,\nCan't add to temporarily allowed users"
@@ -257,7 +257,7 @@ async def temp_auth(event, args, client):
                 )
         else:
             return await event.reply(
-                "<blockquote>Either reply to a message sent by the user you want to add to temporarily allowed users or send /permit (user-id)\nExample:\n  /permit 123456</blockquote>"
+                "Either reply to a message sent by the user you want to add to temporarily allowed users or send /permit (user-id)\nExample:\n  /permit 123456"
             )
     new_id = int(new_id)
     if new_id == sender:
@@ -281,7 +281,7 @@ async def temp_auth(event, args, client):
 async def icommands(event):
     s = conf.CMD_SUFFIX or str()
     await event.edit(
-        f"""<blockquote>`
+        f"""`
 start{s} - check if bot is awake and get usage.
 restart{s} -  restart bot
 update{s} - update bot
@@ -330,7 +330,7 @@ clear{s} - clear queued files
 logs{s} - get bot logs
 help{s} - same as start`
 
-All above commands accept '-h' / '--help' arguments to get more detailed help about each command.</blockquote>
+All above commands accept '-h' / '--help' arguments to get more detailed help about each command.
         """,
         buttons=[Button.inline("🔙 Back", data="ihelp")],
     )
