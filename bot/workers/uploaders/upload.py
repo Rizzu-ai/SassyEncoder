@@ -32,7 +32,7 @@ class Uploader:
             async with tele.action(from_user_id, "file"):
                 await reply.edit("🔺Uploading🔺")
                 self.time = u_start = time.time()
-                s = await message.reply_document(
+                s = await message.reply_media(
                     document=filepath,
                     quote=True,
                     thumb=thum,
