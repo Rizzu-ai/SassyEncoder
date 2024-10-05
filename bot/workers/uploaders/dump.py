@@ -21,7 +21,7 @@ async def dumpdl(dl, name, thum, user, message):
         sticker = conf.FSTICKER or h_sticker
         if dump_:
             message = await pyro.send_message(
-                dump_, "`🚨 Incoming! 🚨`\n\n" + await parse_dl(name)
+                dump_, "`🚨 POPO 📢 It's Incoming! 🚨`\n\n" + await parse_dl(name)
             )
             await asyncio.sleep(5)
             reply = await message.reply(f"__Dumping:__\n {fname}__…__", quote=True)
