@@ -8,7 +8,7 @@ from bot.utils.log_utils import logger
 from bot.utils.os_utils import parse_dl, s_remove
 from bot.workers.uploaders.upload import Uploader as uploader
 
-h_sticker = "CAACAgEAAxkBAAI0aWKx36P2GY9Fq6xvN0SBU1V2xZYIAAKXAgACJ_hhR9HcWzoditT7HgQ"
+h_sticker = "CAACAgUAAxkBAAJ_6mcAAfOTo-17WODxPkDEBq-vWdmpOgACJw8AAhPTGVQ1KiIUmHJLlDYE"
 
 
 async def dumpdl(dl, name, thum, user, message):
