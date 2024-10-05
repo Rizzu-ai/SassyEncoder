@@ -30,7 +30,7 @@ class Uploader:
             fm = f"**From folder:** `{os.path.split(filepath)[0]}`"
             fm += f"\n**File:** `{os.path.split(filepath)[1]}`"
             async with tele.action(from_user_id, "file"):
-                await reply.edit("🔺Uploading🔺")
+                await reply.edit("📤Uploading...")
                 self.time = u_start = time.time()
                 s = await message.reply_document(
                     document=filepath,
