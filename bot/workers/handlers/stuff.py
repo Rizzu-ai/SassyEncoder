@@ -129,7 +129,7 @@ async def start(event, args, client):
                     "Contact",
                     url="https://t.me/ContactM_ebot",
                 ),
-                Button.url("SUP Channel", url="t.me/aboutRizzx"),
+                Button.url("SUP Channel", url="https://t.me/aboutRizzx"),
             ],
             [Button.url("Leech Group", url="t.me/Bhartiyeleech")],
         ],
