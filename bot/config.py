@@ -31,8 +31,8 @@ class Config:
             self.ARIA2_PORT = config("ARIA2_PORT", default=6800, cast=int)
             self.BOT_TOKEN = config("BOT_TOKEN")
             self.CACHE_DL = config("CACHE_DL", default=False, cast=bool)
-            self.CAP_DECO = config("CAP_DECO", default="◉")
-            self.C_LINK = config("C_LINK", default="@aboutRizzx")
+            self.CAP_DECO = config("CAP_DECO", default="〄")
+            self.C_LINK = config("C_LINK", default="@AnimeOrbits")
             self.CMD_SUFFIX = config("CMD_SUFFIX", default=str())
             self.DATABASE_URL = config("DATABASE_URL", default=None)
             self.DBNAME = config("DBNAME", default="ENC")
@@ -51,8 +51,8 @@ class Config:
                 "FFMPEG",
                 default='ffmpeg -i "{}" -preset ultrafast -c:v libx265 -crf 27 -map 0:v -c:a aac -map 0:a -c:s copy -map 0:s? "{}"',
             )
-            self.FINISHED_PROGRESS_STR = config("FINISHED_PROGRESS_STR", default="🧡")
-            self.FL_CAP = config("FILENAME_AS_CAPTION", default=False, cast=bool)
+            self.FINISHED_PROGRESS_STR = config("FINISHED_PROGRESS_STR", default="🤖")
+            self.FL_CAP = config("FILENAME_AS_CAPTION", default=True, cast=bool)
             self.FS_THRESHOLD = config("FLOOD_SLEEP_THRESHOLD", default=600, cast=int)
             self.FSTICKER = config("FSTICKER", default=None)
             self.LOCK_ON_STARTUP = config("LOCK_ON_STARTUP", default=False, cast=bool)
@@ -80,7 +80,7 @@ class Config:
             self.TG_UL_CLIENT = config("TG_UL_CLIENT", default="pyrogram")
             self.THUMB = config("THUMBNAIL", default=None)
             self.UN_FINISHED_PROGRESS_STR = config(
-                "UN_FINISHED_PROGRESS_STR", default="🤍"
+                "UN_FINISHED_PROGRESS_STR", default="🦉"
             )
             self.USE_ANILIST = config("USE_ANILIST", default=True, cast=bool)
             self.USE_CAPTION = config("USE_CAPTION", default=True, cast=bool)
