@@ -14,8 +14,8 @@ psutil
 pycountry
 pymediainfo
 pymongo[srv]
-#git+https://github.com/KurimuzonAkuma/pyrogram
-pyrogram==2.0.106
+git+https://github.com/KurimuzonAkuma/pyrogram
+#pyrogram==2.0.106
 python-decouple
 qbittorrent-api
 quote
@@ -26,5 +26,5 @@ certifi>=2023.7.22 # not directly required, pinned by Snyk to avoid a vulnerabil
 dnspython>=2.6.0rc1 # not directly required, pinned by Snyk to avoid a vulnerability
 requests>=2.32.0 # not directly required, pinned by Snyk to avoid a vulnerability
 setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
-numba==0.57.0 # JIT compiler to optimize Python code
-cython==3.0.0 # C-extensions for Python to speed up code
+#numba==0.57.0 # JIT compiler to optimize Python code
+#cython==3.0.0 # C-extensions for Python to speed up code
